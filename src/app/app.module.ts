@@ -2,44 +2,53 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-
-import { AboutPage } from '../pages/about/about';
-import { MenuPage } from '../pages/menu/menu';
-import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
-import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-// import {
-//   Pg2PageModule
-// } from '../pages/index';
+import {
+  MenuPage,
+  AboutPage,
+  ContactPage,
+  HomePage,
+  TabsPage,
+  Pg1Page,
 
-import { Pg2Page } from '../pages/index';
+} from '../pages/index';
+// import { LoginPage } from '../pages/login/login';
+import {
+  LoginPageModule
+} from '../pages/login/login.module';
+import {
+  HomePageModule
+} from '../pages/home/home.module';
+
 @NgModule({
   declarations: [
     //dont forget to import here the components!!!
     MyApp,
     AboutPage,
     ContactPage,
-    HomePage,
     TabsPage,
-    Pg2Page,
-    MenuPage
+    Pg1Page,
 
+    MenuPage,
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    // ComponentsModule
+    LoginPageModule,
+    HomePageModule
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     //and here!!
-    Pg2Page,
+
+    Pg1Page,
     MyApp,
     AboutPage,
     ContactPage,
-    HomePage,
     TabsPage,
     MenuPage
   ],

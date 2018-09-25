@@ -2,28 +2,24 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the Pg2Page page.
+ * Generated class for the NotesPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
 
-
-@IonicPage()
+@IonicPage({name:'Notes'})
 @Component({
-  selector: 'page-pg2',
-  templateUrl: 'pg2.html',
+  selector: 'page-notes',
+  templateUrl: 'notes.html',
 })
-export class Pg2Page {
+export class NotesPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad Pg2Page');
-  }
-  goBackFromPg2(): void {
-    this.navCtrl.pop();
+    console.log('ionViewDidLoad NotesPage');
   }
 
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 /**
  * Generated class for the Pg1Page page.
@@ -9,16 +9,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  */
 
 //to navigate with urls
-@IonicPage({ name: 'pagina1', segment: 'pagina-1/:param' })
+
 @Component({
   selector: 'page-pg1',
   templateUrl: 'pg1.html',
 })
 export class Pg1Page {
 
-  greeting: string;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.greeting = this.navParams.get('param');
   }
 
   ionViewDidLoad() {
