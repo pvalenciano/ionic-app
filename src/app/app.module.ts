@@ -4,6 +4,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { AboutPage } from '../pages/about/about';
+import { MenuPage } from '../pages/menu/menu';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -23,7 +24,8 @@ import { Pg2Page } from '../pages/index';
     ContactPage,
     HomePage,
     TabsPage,
-    Pg2Page
+    Pg2Page,
+    MenuPage
 
   ],
   imports: [
@@ -38,7 +40,8 @@ import { Pg2Page } from '../pages/index';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    MenuPage
   ],
   providers: [
     StatusBar,

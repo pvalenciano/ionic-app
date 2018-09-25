@@ -3,17 +3,19 @@ import { Component } from '@angular/core';
 import { AboutPage } from '../about/about';
 import { ContactPage } from '../contact/contact';
 import { HomePage } from '../home/home';
+import { NavController, NavParams } from 'ionic-angular';
+import { MenuPage } from '../menu/menu';
 
 @Component({
   templateUrl: 'tabs.html'
 })
 export class TabsPage {
 
-  tab1Root = HomePage;
+  tab1Root = MenuPage;
   tab2Root = AboutPage;
   tab3Root = ContactPage;
 
-  constructor() {
-
+  myIndex: number;
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 }

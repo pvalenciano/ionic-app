@@ -1,10 +1,37 @@
 <ion-header>
   <ion-navbar>
+    <ion-buttons start>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+        
+      </button>
+    </ion-buttons>
+
     <ion-title>Home</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <button ion-button (click)="goPg2()">Go to PG2</button>
- 
+
+  <!-- 
+    <ion-list>
+      <button ion-item menuClose *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon item-start [name]="p.icon" ></ion-icon>
+        {{p.title}}
+      </button>
+    </ion-list> -->
+
+
 </ion-content>
+<!-- <ion-nav [root]="rootPage" #content swipeBackEnabled="false"> -->
+
+<!-- </ion-nav>
+
+ <button ion-button color="dark" (click)="goPg1URL()">Go to PG1</button>
+  <button ion-button color="compuesto" (click)="goPg2()">Go to PG2</button>
+  <button ion-button color="dark" (click)="goPg1URL()">Action & alerts</button>
+  <button ion-button color="compuesto" (click)="goPg2()">Badges & Buttons</button>
+  <button ion-button color="dark" (click)="goPg1URL()">Cards & Fabs</button>
+  <button ion-button color="compuesto" (click)="goPg2()">Gestures</button>
+  <button ion-button color="dark" (click)="goPg1URL()">Wait</button>
+  <button ion-button color="compuesto" (click)="goPg2()">Go to PG2</button> -->
