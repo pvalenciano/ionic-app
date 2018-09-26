@@ -1,27 +1,27 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { MyApp } from './app.component';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { AngularFireModule } from 'angularfire2/';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { FIREBASE_CONFIG } from './firebase.credentials';
+import { EmailComposer } from '@ionic-native/email-composer';
 
+import { MyApp } from './app.component';
 import {
   MenuPage,
   AboutPage,
   ContactPage,
-  HomePage,
   TabsPage,
   Pg1Page,
 
 } from '../pages/index';
-// import { LoginPage } from '../pages/login/login';
-import {
-  LoginPageModule
-} from '../pages/login/login.module';
-import {
-  HomePageModule
-} from '../pages/home/home.module';
 
+import { UserPageModule, RegisterPageModule, LoginPageModule, HomePageModule } from '../pages/modules';
+import { SongsService } from '../services/song.service';
 @NgModule({
   declarations: [
     //dont forget to import here the components!!!
@@ -30,21 +30,22 @@ import {
     ContactPage,
     TabsPage,
     Pg1Page,
-
     MenuPage,
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    // ComponentsModule
     LoginPageModule,
-    HomePageModule
-
+    HomePageModule,
+    UserPageModule,
+    AngularFireModule.initializeApp(FIREBASE_CONFIG),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    RegisterPageModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     //and here!!
-
     Pg1Page,
     MyApp,
     AboutPage,
@@ -55,7 +56,10 @@ import {
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    AngularFireAuth,
+    EmailComposer,
+    SongsService
   ]
 })
 export class AppModule { }
