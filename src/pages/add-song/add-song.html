@@ -16,33 +16,25 @@
 <ion-content padding>
   <button ion-button block clear (click)="addSong(song)">Add</button>
   <ion-item>
-    <ion-label>
+    <ion-label >
       Band Name
-    </ion-label>
+    </ion-label >
     <ion-select [(ngModel)]="song.band" multiple="false" cancelText="Cancel" okText="Select">
       <ion-option *ngFor="let band of bandsList$ | async" detail-push>{{band.name}}</ion-option>
     </ion-select>
-    <!-- <ion-input [(ngModel)]="song.band" placeholder="Band name..."></ion-input> -->
   </ion-item>
 
   <ion-item>
-    <ion-label>
+    <ion-label floating>
       Song Title
     </ion-label>
-    <ion-input [(ngModel)]="song.title" placeholder="song title..."></ion-input>
+    <ion-input [(ngModel)]="song.title" ></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label>
-      Chords
-    </ion-label>
-    <ion-input [(ngModel)]="song.chords" placeholder="chords..."></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label>
+    <ion-label floating>
       Lyrics
     </ion-label>
-    <ion-input [(ngModel)]="song.lyrics" placeholder="Lyrics..."></ion-input>
+    <ion-textarea rows="30" [(ngModel)]="myInput" (keyup)="resize()" class="lyrics_textarea" [(ngModel)]="song.lyrics" ></ion-textarea>
   </ion-item>
 </ion-content>

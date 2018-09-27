@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Song } from '../../models/song.model';
 import { SongsService } from '../../services/song.service';
@@ -19,6 +19,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class AddSongPage {
   bandsList$: Observable<Band[]>;
+  @ViewChild('myInput') myInput: ElementRef;
 
   song: Song = {
     title: '',
@@ -46,5 +47,8 @@ export class AddSongPage {
       this.navCtrl.setRoot('Music', { key: ref.key })
     });
   }
+  resize() {
+    // this.myInput.nativeElement.style.height = this.myInput.nativeElement.scrollHeight + 'px';
 
+  }
 }

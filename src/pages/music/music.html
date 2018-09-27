@@ -21,6 +21,45 @@
 <ion-content padding>
   <ion-searchbar [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)">
   </ion-searchbar>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Show Songs From Band</ion-label>
+      <ion-select (ionChange)="onContextChange($event)" [(ngModel)]="bands" multiple="false" cancelText="Cancel" okText="Select">
+        <ion-option *ngFor="let band of bandsList$ | async" detail-push>{{band.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-buttons>
+    <button ion-button clear (click)="showAllSongs()">
+      All
+    </button>
+    <button ion-button small round (click)="sendEmail()">
+      <ion-icon name="mail"></ion-icon>
+    </button>
+  </ion-buttons>
+  <ion-item class="edit_toggle">
+    <ion-label>Edit</ion-label>
+    <ion-toggle (ionChange)="onEdit($event)"></ion-toggle>
+  </ion-item>
+  <div class="scroll_list_song">
+    <ion-list>
+      <ion-list-header>
+        SONGS LIST
+      </ion-list-header>
+
+      <!-- <ion-item-group reorder="true" (ionItemReorder)="$event.applyTo(song)"> -->
+      <ion-item-group>
+
+        <ion-item class="list_items" *ngFor="let song of songsList$ | async" detail-push [navPush]="goToView"
+          [navParams]="{song:song}">
+          <ion-icon *ngIf="edit" color="danger" name="trash" (click)="deleteSong(song)"></ion-icon> {{song.title}}
+        </ion-item>
+      </ion-item-group>
+    </ion-list>
+
+  </div>
   <ion-fab bottom left>
     <button ion-fab>
       <ion-icon name="musical-notes"></ion-icon>
@@ -34,34 +73,6 @@
       </button>
     </ion-fab-list>
   </ion-fab>
-  <ion-list>
-    <ion-item>
-      <ion-label>Show Songs From Band</ion-label>
-      <ion-select (ionChange)="onContextChange($event)" [(ngModel)]="bands" multiple="false" cancelText="Cancel" okText="Select">
-        <ion-option *ngFor="let band of bandsList$ | async" detail-push>{{band.name}}</ion-option>
-      </ion-select>
-    </ion-item>
-  </ion-list>
 
-  <ion-item class="edit_toggle">
-    <ion-label>Edit</ion-label>
-    <ion-toggle (ionChange)="onEdit($event)"></ion-toggle>
-  </ion-item>
-  <ion-list>
-    <ion-list-header>
-      SONGS LIST
-    </ion-list-header>
-    <ion-item class="list_items" *ngFor="let song of songsList$ | async" detail-push [navPush]="goToView" [navParams]="{song:song}">
-      <ion-icon *ngIf="edit" name="trash" (click)="deleteSong(song)"></ion-icon> {{song.title}}
-    </ion-item>
-  </ion-list>
-  <ion-buttons>
-    <button ion-button (click)="showAllSongs()">
-      Show All songs
-    </button>
-    <button ion-button navPush="InvitePage">
-      Invite
-    </button>
-  </ion-buttons>
 
 </ion-content>

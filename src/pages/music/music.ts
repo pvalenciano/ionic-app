@@ -7,7 +7,7 @@ import { Band } from '../../models/band.model';
 import 'rxjs/add/operator/map'
 import 'rxjs/Rx';
 import { AlertController } from 'ionic-angular';
-import { ViewSongPage } from '../view-song/view-song';
+import { EmailComposer } from '@ionic-native/email-composer';
 
 /**
  * Generated class for the MusicPage page.
@@ -36,7 +36,8 @@ export class MusicPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     private songsService: SongsService,
-    public alertCtrl: AlertController) {
+    public alertCtrl: AlertController,
+    private emailComposer: EmailComposer) {
 
     this.songsList$ = this.songsService.getSongsList().snapshotChanges().map(changes => {
       return changes.map(c => ({
@@ -102,7 +103,20 @@ export class MusicPage {
       }));
     });
   }
+  sendEmail() {
+    let email = {
+      to: '',
+      cc: '',
+      attachments: [
 
+      ],
+      subject: 'Join the band and see instan lyrics updates',
+      body: 'Check put the app on the appstore or googleplay',
+      isHtml: true
+    };
+    this.emailComposer.open(email);
+    console.log("email? : ", this.emailComposer.open(email));
+  }
   //Searchbar methods
   onInput(e) {
   }
