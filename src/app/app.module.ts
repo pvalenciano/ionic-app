@@ -24,7 +24,12 @@ import {
   RegisterPageModule,
   LoginPageModule,
   HomePageModule,
-  MusicPageModule
+  MusicPageModule,
+  NotesPageModule,
+  NewsPageModule,
+  EditBandPageModule,
+  RegisterBandPageModule,
+  AddBandPageModule
 } from '../pages/modules';
 import { SongsService } from '../services/song.service';
 @NgModule({
@@ -35,7 +40,7 @@ import { SongsService } from '../services/song.service';
     ContactPage,
     TabsPage,
     Pg1Page,
-    MenuPage,
+    MenuPage
   ],
   imports: [
     BrowserModule,
@@ -47,7 +52,13 @@ import { SongsService } from '../services/song.service';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     RegisterPageModule,
-    MusicPageModule
+    MusicPageModule,
+    NotesPageModule,
+    NewsPageModule,
+    EditBandPageModule,
+    RegisterBandPageModule,
+    AddBandPageModule
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [

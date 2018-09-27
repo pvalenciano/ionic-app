@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Song } from '../../models/song.model';
+import { SongsService } from '../../services/song.service';
+9
 /**
  * Generated class for the ViewSongPage page.
  *
@@ -24,7 +26,10 @@ export class ViewSongPage {
 
 
   // }
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  songState: string = "lyrics";
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private songs: SongsService) {
+
   }
 
   ionViewWillLoad() {

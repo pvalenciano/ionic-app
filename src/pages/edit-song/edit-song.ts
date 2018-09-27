@@ -29,13 +29,9 @@ export class EditSongPage {
   }
   saveSong(song: Song) {
     this.songs.editSong(song).then(() => {
-      this.navCtrl.setRoot('Music')
+      this.navCtrl.setRoot('Music');
     });
   }
-  deleteSong(song: Song) {
-    this.songs.removeSong(song).then(() => {
-      this.navCtrl.setRoot('Music')
-    });
-  }
+
 
 }

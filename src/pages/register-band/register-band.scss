@@ -1,3 +1,10 @@
 page-register-band {
-
+    .scroll_list{
+        overflow-y: scroll;
+        height: 80%;
+    }
+    .add_band{
+        position: absolute;
+        bottom: 10px;
+    }
 }

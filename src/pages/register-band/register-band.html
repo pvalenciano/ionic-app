@@ -1,16 +1,40 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Register a Band</ion-title>
+    <ion-title>Bands</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  <ion-item>
-    <ion-label>Band name</ion-label>
-    <ion-input [(ngModel)]="band.name" placeholder="Name"></ion-input>
-  </ion-item>
-  <button ion-button block clear (click)="addBand(band)">Register Band</button>
+  <ion-searchbar [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)">
+  </ion-searchbar>
+  <div class="scroll_list">
+    <ion-list class="bands_list">
+      <ion-item-sliding *ngFor="let band of bandsList$ | async">
+        <ion-item detail-push>
+          <h2>{{band.name}}</h2>
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button color="primary" navPush="EditBandPage" [navParams]="{band:band}">
+            <ion-icon name="paper"></ion-icon>
+          </button>
+          <button ion-button color="danger" (click)="deleteBand(band)">
+            <ion-icon name="trash"></ion-icon>
+          </button>
+        </ion-item-options>
+
+      </ion-item-sliding>
+    </ion-list>
+
+
+  </div>
+
+
+  <button ion-fab class="add_band" color="secondary" navPush="AddBandPage">
+    <ion-icon name="add"></ion-icon>
+  </button>
+
+
 </ion-content>

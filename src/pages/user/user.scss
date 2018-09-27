@@ -1,3 +1,27 @@
 page-user {
+    .card-background-page {
 
+        ion-card {
+          position: relative;
+          text-align: center;
+          max-height: 200px;
+          background-color: rgba(0, 0, 0, 0.897);
+        }
+      
+        .card-title {
+          position: absolute;
+          top: 36%;
+          font-size: 3.0em;
+          width: 100%;
+          color: rgb(255, 255, 255);
+        }
+        img{
+            opacity: 0.6;
+            // margin-top:-230px;    
+        }
+        .img_top{
+             margin-top:-230px;    
+        }
+      
+      }
 }

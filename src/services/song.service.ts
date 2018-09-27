@@ -12,30 +12,22 @@ export class SongsService {
         name: ''
     }
 
-    constructor(private db: AngularFireDatabase) {}
+    constructor(private db: AngularFireDatabase) { }
 
+    //songs
     getSongsList() {
         return this.songListRef;
     }
-
     filterByString(band: string) {
         return this.db.list('/song-list', ref => ref.orderByChild('band').equalTo(band));
     }
 
     assembleBandFilteredList(ctxt: string): any {
-        console.log("ctxt: ",ctxt);
-        return(this.filterByString(ctxt));
+        console.log("ctxt: ", ctxt);
+        return (this.filterByString(ctxt));
     }
-
     addSong(song: Song) {
         return this.songListRef.push(song);
-    }
-
-    addBand(band: Band) {
-        return this.bandListRef.push(band);
-    }
-    getBandList() {
-        return this.bandListRef;
     }
     editSong(song: Song) {
         console.log("key: ", song.key);
@@ -44,4 +36,22 @@ export class SongsService {
     removeSong(song: Song) {
         return this.songListRef.remove(song.key);
     }
+    //bands
+    getBandList() {
+        return this.bandListRef;
+    }
+
+    addBand(band: Band) {
+        return this.bandListRef.push(band);
+    }
+
+    removeBand(band: Band) {
+        return this.bandListRef.remove(band.key);
+    }
+
+    editBand(band: Band) {
+        console.log("key: ", band.key);
+        return this.bandListRef.update(band.key, band);
+    }
+
 }

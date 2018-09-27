@@ -19,7 +19,10 @@
     <ion-label>
       Band Name
     </ion-label>
-    <ion-input [(ngModel)]="song.band" placeholder="Band name..."></ion-input>
+    <ion-select [(ngModel)]="song.band" multiple="false" cancelText="Cancel" okText="Select">
+      <ion-option *ngFor="let band of bandsList$ | async" detail-push>{{band.name}}</ion-option>
+    </ion-select>
+    <!-- <ion-input [(ngModel)]="song.band" placeholder="Band name..."></ion-input> -->
   </ion-item>
 
   <ion-item>

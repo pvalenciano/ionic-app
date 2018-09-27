@@ -36,7 +36,7 @@ export class InvitePage {
       isHtml: true
     };
     this.emailComposer.open(email);
-    console.log("email? : ",this.emailComposer.open(email));
+    console.log("email? : ", this.emailComposer.open(email));
   }
 
 }

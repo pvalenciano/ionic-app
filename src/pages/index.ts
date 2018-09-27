@@ -5,4 +5,9 @@ export { TabsPage } from './tabs/tabs';
 export { HomePage } from './home/home';
 export { Pg1Page } from './pg1/pg1';
 export { LoginPage } from './login/login';
-
+export { MusicPage } from './music/music';
+export { NotesPage } from './notes/notes';
+export { NewsPage } from './news/news';
+export { EditBandPage } from './edit-band/edit-band';
+export { AddBandPage } from './add-band/add-band';
+export { RegisterBandPage } from './register-band/register-band';

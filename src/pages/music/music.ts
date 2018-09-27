@@ -6,6 +6,9 @@ import { Song } from '../../models/song.model';
 import { Band } from '../../models/band.model';
 import 'rxjs/add/operator/map'
 import 'rxjs/Rx';
+import { AlertController } from 'ionic-angular';
+import { ViewSongPage } from '../view-song/view-song';
+
 /**
  * Generated class for the MusicPage page.
  *
@@ -21,15 +24,19 @@ import 'rxjs/Rx';
 export class MusicPage {
   songsList$: Observable<Song[]>;
   bandsList$: Observable<Band[]>;
+  edit: boolean = false;
 
+  goToView = 'ViewSongPage';
   band: Band = {
     name: ''
   }
-
+  //searchbar
+  myInput: '';
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private songsService: SongsService) {
+    private songsService: SongsService,
+    public alertCtrl: AlertController) {
 
     this.songsList$ = this.songsService.getSongsList().snapshotChanges().map(changes => {
       return changes.map(c => ({
@@ -56,12 +63,38 @@ export class MusicPage {
       }));
     });
   }
+  onEdit(e) {
+    console.log("e: ", e.checked);
+    this.edit = e.checked;
+  }
+  deleteSong(song: Song) {
+    this.goToView = null;
 
+    const confirm = this.alertCtrl.create({
+      title: ' Delete',
+      message: ' Do you want to delete: ' + song.title + ' ?',
+      buttons: [
+        {
+          text: 'No',
+          handler: () => {
+            console.log("Disagree clicked");
+          }
+        },
+        {
+          text: 'Yes',
+          handler: () => {
+            console.log('Agree!');
+            this.songsService.removeSong(song).then(() => {
+              this.navCtrl.setRoot('Music')
+            });
+          }
+        }
+      ]
+    });
+    confirm.present();
 
-  // onContextChange(event) {
-  //   console.log('ctxt', event);
+  }
 
-  // }
   showAllSongs() {
     this.songsList$ = this.songsService.getSongsList().snapshotChanges().map(changes => {
       return changes.map(c => ({
@@ -69,8 +102,16 @@ export class MusicPage {
       }));
     });
   }
-  // logout(): void {
-  //   this.angularFireAuth.auth.signOut();
 
-  // }
+  //Searchbar methods
+  onInput(e) {
+  }
+  onCancel(e) {
+  }
+  //logout from firebase
+  logout(): void {
+    console.log("i will sign out soon...")
+    // this.angularFireAuth.auth.signOut();
+
+  }
 }
