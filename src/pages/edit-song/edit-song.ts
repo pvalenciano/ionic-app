@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { SongsService } from '../../services/song.service';
+import { Song } from '../../models/song.model';
 /**
  * Generated class for the EditSongPage page.
  *
@@ -15,11 +16,26 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class EditSongPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  song: Song;
+
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private songs: SongsService) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad EditSongPage');
+  ionViewWillLoad() {
+    this.song = this.navParams.get('song');
+  }
+  saveSong(song: Song) {
+    this.songs.editSong(song).then(() => {
+      this.navCtrl.setRoot('Music')
+    });
+  }
+  deleteSong(song: Song) {
+    this.songs.removeSong(song).then(() => {
+      this.navCtrl.setRoot('Music')
+    });
   }
 
 }

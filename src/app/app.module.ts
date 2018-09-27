@@ -16,11 +16,16 @@ import {
   AboutPage,
   ContactPage,
   TabsPage,
-  Pg1Page,
-
+  Pg1Page
 } from '../pages/index';
 
-import { UserPageModule, RegisterPageModule, LoginPageModule, HomePageModule } from '../pages/modules';
+import {
+  UserPageModule,
+  RegisterPageModule,
+  LoginPageModule,
+  HomePageModule,
+  MusicPageModule
+} from '../pages/modules';
 import { SongsService } from '../services/song.service';
 @NgModule({
   declarations: [
@@ -42,6 +47,7 @@ import { SongsService } from '../services/song.service';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     RegisterPageModule,
+    MusicPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

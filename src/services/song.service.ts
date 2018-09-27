@@ -5,24 +5,26 @@ import { Band } from '../models/band.model';
 
 @Injectable()
 export class SongsService {
+
     private songListRef = this.db.list<Song>('song-list');
     private bandListRef = this.db.list<Band>('band-list');
     private band: Band = {
         name: ''
     }
-    constructor(private db: AngularFireDatabase) {
 
-    }
+    constructor(private db: AngularFireDatabase) {}
+
     getSongsList() {
         return this.songListRef;
     }
+
     filterByString(band: string) {
         return this.db.list('/song-list', ref => ref.orderByChild('band').equalTo(band));
     }
 
     assembleBandFilteredList(ctxt: string): any {
-        //user filter by string to return all songs by a particular band
-        return (this.filterByString(ctxt));
+        console.log("ctxt: ",ctxt);
+        return(this.filterByString(ctxt));
     }
 
     addSong(song: Song) {
@@ -32,17 +34,14 @@ export class SongsService {
     addBand(band: Band) {
         return this.bandListRef.push(band);
     }
-
     getBandList() {
         return this.bandListRef;
     }
-
     editSong(song: Song) {
+        console.log("key: ", song.key);
         return this.songListRef.update(song.key, song);
     }
-
     removeSong(song: Song) {
         return this.songListRef.remove(song.key);
     }
-
 }

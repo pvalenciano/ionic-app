@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Song } from '../../models/song.model';
-import { Band } from '../../models/band.model';
 import { SongsService } from '../../services/song.service';
 
 /**
@@ -35,7 +34,7 @@ export class AddSongPage {
   }
   addSong(song: Song) {
     this.songs.addSong(song).then(ref => {
-      this.navCtrl.setRoot('User', { key: ref.key })
+      this.navCtrl.setRoot('Music', { key: ref.key })
     });
   }
 

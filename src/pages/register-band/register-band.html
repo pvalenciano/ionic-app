@@ -1,0 +1,16 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Register a Band</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>Band name</ion-label>
+    <ion-input [(ngModel)]="band.name" placeholder="Name"></ion-input>
+  </ion-item>
+  <button ion-button block clear (click)="addBand(band)">Register Band</button>
+</ion-content>
