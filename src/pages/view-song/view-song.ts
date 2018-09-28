@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Song } from '../../models/song.model';
-import { SongsService } from '../../services/song.service';
+import { SongProvider } from '../../providers/song/song';
 9
 /**
  * Generated class for the ViewSongPage page.
@@ -17,18 +17,13 @@ import { SongsService } from '../../services/song.service';
 })
 export class ViewSongPage {
   song: Song;
-  //  = {
-  //   key:'',
-  //   title:'',
-  //   chords: '',
-  //   lyrics: '',
-  //   band:''
 
-
-  // }
   songState: string = "lyrics";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private songs: SongsService) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private songs: SongProvider) {
 
   }
 

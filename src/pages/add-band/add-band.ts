@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Band } from '../../models/band.model';
-import { SongsService } from '../../services/song.service';
+import { BandProvider } from '../../providers/band/band';
 import { ToastController } from 'ionic-angular';
 
 /**
@@ -21,7 +21,7 @@ export class AddBandPage {
     name: ''
   }
   constructor(
-    private regBand: SongsService,
+    private regBand: BandProvider,
     public navCtrl: NavController,
     public navParams: NavParams,
     public toastCtrl: ToastController

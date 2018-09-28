@@ -1,10 +1,10 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Song } from '../../models/song.model';
-import { SongsService } from '../../services/song.service';
+import { SongProvider } from '../../providers/song/song';
 import { Band } from '../../models/band.model';
 import { Observable } from 'rxjs/Observable';
-
+import { BandProvider } from '../../providers/band/band';
 /**
  * Generated class for the AddSongPage page.
  *
@@ -30,10 +30,12 @@ export class AddSongPage {
   constructor(
     public navCtrl: NavController,
     navParams: NavParams,
-    public songs: SongsService) {
+    public songs: SongProvider,
+    public bands: BandProvider
+    ) {
   }
   ionViewWillLoad() {
-    this.bandsList$ = this.songs.getBandList().snapshotChanges().map(changes => {
+    this.bandsList$ = this.bands.getBandList().snapshotChanges().map(changes => {
       return changes.map(c => ({
         key: c.payload.key, ...c.payload.val()
       }));

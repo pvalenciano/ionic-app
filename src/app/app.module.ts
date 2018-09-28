@@ -29,9 +29,13 @@ import {
   NewsPageModule,
   EditBandPageModule,
   RegisterBandPageModule,
-  AddBandPageModule
+  AddBandPageModule,
+  AddNotePageModule,
+  EditNotePageModule
 } from '../pages/modules';
-import { SongsService } from '../services/song.service';
+// import { SongsService } from '../services/song.service';
+import { SongProvider,BandProvider,NoteProvider } from '../providers/index';
+
 @NgModule({
   declarations: [
     //dont forget to import here the components!!!
@@ -57,8 +61,9 @@ import { SongsService } from '../services/song.service';
     NewsPageModule,
     EditBandPageModule,
     RegisterBandPageModule,
-    AddBandPageModule
-
+    AddBandPageModule,
+    AddNotePageModule,
+    EditNotePageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -76,7 +81,10 @@ import { SongsService } from '../services/song.service';
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     AngularFireAuth,
     EmailComposer,
-    SongsService
+    // SongsService,
+    SongProvider,
+    BandProvider,
+    NoteProvider
   ]
 })
 export class AppModule { }

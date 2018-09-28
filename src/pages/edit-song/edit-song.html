@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    
+
     <ion-title>Editing: {{song?.title}}</ion-title>
   </ion-navbar>
 
@@ -18,10 +18,13 @@
   <button ion-button block clear (click)="saveSong(song)">Save</button>
 
   <ion-item>
-    <ion-label>Band</ion-label>
-    <ion-input [(ngModel)]="song.band"></ion-input>
+    <ion-label>
+      Band
+    </ion-label>
+    <ion-select [(ngModel)]="song.band" multiple="false" cancelText="Cancel" okText="Select">
+      <ion-option *ngFor="let band of bandsList$ | async" detail-push>{{band.name}}</ion-option>
+    </ion-select>
   </ion-item>
-
   <ion-item class="lyrics">
     <ion-label>Song Title</ion-label>
     <ion-textarea [(ngModel)]="song.title"></ion-textarea>

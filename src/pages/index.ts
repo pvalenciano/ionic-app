@@ -11,3 +11,5 @@ export { NewsPage } from './news/news';
 export { EditBandPage } from './edit-band/edit-band';
 export { AddBandPage } from './add-band/add-band';
 export { RegisterBandPage } from './register-band/register-band';
+export { AddNotePage } from './add-note/add-note';
+export { EditNotePage } from './edit-note/edit-note';

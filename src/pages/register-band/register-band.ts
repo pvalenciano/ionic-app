@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { SongsService } from '../../services/song.service';
+import { BandProvider } from '../../providers/band/band';
 import { Band } from '../../models/band.model';
 import { Observable } from 'rxjs/Observable';
 import { AlertController } from 'ionic-angular';
@@ -25,7 +25,7 @@ export class RegisterBandPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private regBand: SongsService,
+    private regBand: BandProvider,
     public alertCtrl: AlertController) {
 
     this.bandsList$ = this.regBand.getBandList().snapshotChanges().map(changes => {

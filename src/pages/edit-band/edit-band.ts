@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Band } from '../../models/band.model';
-import { SongsService } from '../../services/song.service';
+import { BandProvider } from '../../providers/band/band';
 
 
 /**
@@ -20,7 +20,7 @@ export class EditBandPage {
   band: Band = {
     name: ''
   }
-  constructor(private regBand: SongsService, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private regBand: BandProvider, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -33,8 +33,5 @@ export class EditBandPage {
       this.navCtrl.setRoot('Bands');
     });
 
-    // this.regBand.addBand(band).then(ref => {
-    //   this.navCtrl.setRoot('Bands', { key: ref.key })
-    // });
   }
 }
