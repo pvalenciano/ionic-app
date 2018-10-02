@@ -18,24 +18,26 @@
 
 <ion-content padding>
 
-  <ion-item>
-    <ion-label>Email:</ion-label>
-    <ion-input [(ngModel)]="email"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>Password:</ion-label>
-    <ion-input [(ngModel)]="password" type="password"></ion-input>
-  </ion-item>
-  <div text-center>
-    <button ion-button color="secondary" (click)="login(email, password)">Log in</button>
-    <button ion-button color="light" (click)="onRegisterClicked()">Sign up</button>
+  <div class="form">
+    <div class="logo_div">
+      <img class="logo_login" src="../../assets/icon/Raccoon-0.png">
+    </div>
 
-  </div>
-  <div text-center>
-    <button ion-button color="dark" (click)="backToHome()">
-      <ion-icon name="home"></ion-icon>
-    </button>
+    <ion-item>
+      <ion-label floating>Email:</ion-label>
+      <ion-input [(ngModel)]="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Password:</ion-label>
+      <ion-input [(ngModel)]="password" type="password"></ion-input>
+    </ion-item>
+    <div text-center>
+      <button ion-button color="secondary" (click)="login(email, password)">Log in</button>
+      <button ion-button color="light" navPush="Register">Sign up</button>
 
+    </div>
+   
   </div>
+
 
 </ion-content>

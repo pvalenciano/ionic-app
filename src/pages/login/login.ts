@@ -30,7 +30,5 @@ export class LoginPage {
       this.navCtrl.setRoot('User', { email })
     });
   }
-  onRegisterClicked(): void {
-    this.navCtrl.setRoot('Register');
-  }
+ 
 }

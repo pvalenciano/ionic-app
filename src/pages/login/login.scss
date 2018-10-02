@@ -1,6 +1,31 @@
 page-login {
     ion-content{
-        background-image: url('../../assets/imgs/background1.png') !important;
+        background-color: rgba(255, 0, 43, 0.836) !important;
+        // background-image: url('../../assets/imgs/background6.jpg') !important;
+        // background-image: url('../../assets/imgs/background1.png') !important;
+        // background-image: url('../../assets/imgs/background10.jpg') !important;
+        // background-image: url('../../assets/imgs/background11.gif') !important;
+        // background-image: url('../../assets/imgs/Captura\ de\ pantalla\ 2018-10-01\ a\ las\ 12.52.44.png') !important;
+        // background-image: url('../../assets/imgs/background6.svg') !important;
+        // background-image: url('../../assets/imgs/background8.jpg') !important;
+        // background-image: url('../../assets/imgs/background9.jpg') !important;
+        ion-label{
+            color:white !important;
+        }
     }
+   
+  
+   
 }
- 
+.form{
+    position: relative;
+    top:130px;
+}
+.logo_login{
+    max-width: 100px;
+} 
+.logo_div{
+    width: 100%;
+    text-align: center;
+
+}
