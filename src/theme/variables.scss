@@ -39,10 +39,28 @@ $colors: (
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #222,
-  muestra: rgba(56, 5, 175, 0.801),
+  pink: rgba(223, 55, 158, 0.945),
+  purple: rgba(170, 138, 247, 0.801),
   compuesto:(
     base:rgba(4, 163, 155, 0.801),
     contrast: rgb(255, 255, 255)
+  ),
+  notes_button:(
+    base:rgba(223, 55, 158, 0.945),
+    contrast: rgb(241, 241, 241)
+  ),
+
+  green_black:(
+    base:rgb(19, 230, 89),
+    contrast: rgb(61, 61, 61)
+  ),
+  green_white:(
+    base:rgb(19, 230, 89),
+    contrast: rgb(252, 252, 252)
+  ),
+  group_button:(
+    base:rgb(0, 217, 255),
+    contrast:white
   )
 );
 

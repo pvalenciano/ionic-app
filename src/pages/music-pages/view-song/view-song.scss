@@ -1,0 +1,31 @@
+page-view-song {
+    ion-content{
+        background-color:rgba(88, 87, 87, 0.438) !important;
+      
+    }
+    .card{
+        background-color: rgba(255, 255, 255, 0.151);
+       color:rgb(223, 223, 223);
+       width: 100%;
+       margin: auto;
+    }
+    .lyrics{ 
+        margin: auto;
+        max-width: 100%;
+        width: 65%;
+        height: 90%;
+        // background-color: aquamarine;
+    }
+    .lyrics__title{
+       color:black;
+        font-size: 30px;
+    }
+   
+    .div_edit{
+        padding: 10px;
+ 
+    }
+    .button_remove{
+        float: right;
+    }
+}

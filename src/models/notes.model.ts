@@ -1,6 +1,6 @@
 export interface Notes{
     key?:string;
-    date:string;
+    date:Date;
     title:string;
     note:string;
     

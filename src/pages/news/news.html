@@ -18,4 +18,14 @@
 
 <ion-content padding>
 
+  <ion-card *ngFor="let article of data?.articles" navPush="NoteDetailPage" [navParams]="{article:article}">
+    <!-- <ion-img src="{{article.urlToImage}}">
+
+     </ion-img> -->
+    <img src="{{article.urlToImage}}" />
+    <ion-card-content>
+      <ion-card-title>{{article.title}}</ion-card-title>
+      <p>{{article.description}}</p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

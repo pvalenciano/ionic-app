@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Band } from '../../models/band.model';
 import { AngularFireDatabase } from 'angularfire2/database';
@@ -12,13 +11,10 @@ import { AngularFireDatabase } from 'angularfire2/database';
 @Injectable()
 export class BandProvider {
   private bandListRef = this.db.list<Band>('band-list');
-  private band: Band = {
-    name: ''
-  }
+
   constructor(private db: AngularFireDatabase) {
     console.log('Hello BandProvider Provider');
   }
-  //bands
   getBandList() {
     return this.bandListRef;
   }
@@ -32,7 +28,6 @@ export class BandProvider {
   }
 
   editBand(band: Band) {
-    console.log("key: ", band.key);
     return this.bandListRef.update(band.key, band);
   }
 }

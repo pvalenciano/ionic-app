@@ -1,0 +1,56 @@
+<!--
+  Generated template for the NotesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>notes</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="scroll_content">
+
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6 *ngFor="let note of notesList$ | async">
+          <ion-card >
+            <p class="date_label">{{note.date}}</p>
+            <ion-card-header class="note_header" navPush="EditNotePage" [navParams]="{note:note}">
+              <h3><b>{{note.title}}</b></h3>
+
+            </ion-card-header>
+            <ion-card-content navPush="EditNotePage" [navParams]="{note:note}">
+              {{note.note}}
+            </ion-card-content>
+            <ion-item class="trash_div">
+              <button ion-button clear icon-start item-end class="trash_button" (click)="deleteNote(note)">
+                <ion-icon color="danger" name="trash"></ion-icon>
+              </button>
+            </ion-item>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </div>
+
+  <!-- <button class="add_note_btn" round color="notes_button" full ion-button navPush="AddNotePage">Add note</button> -->
+  <ion-fab bottom right>
+    <button ion-fab class="add_note_btn" color="danger" navPush="AddNotePage">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+
+
+
+
+</ion-content>

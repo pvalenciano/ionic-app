@@ -31,10 +31,13 @@ import {
   RegisterBandPageModule,
   AddBandPageModule,
   AddNotePageModule,
-  EditNotePageModule
+  EditNotePageModule,
+  NoteDetailPageModule
 } from '../pages/modules';
 // import { SongsService } from '../services/song.service';
-import { SongProvider,BandProvider,NoteProvider } from '../providers/index';
+import { SongProvider, BandProvider, NoteProvider } from '../providers/index';
+import { NewsProvider } from '../providers/news/news';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -49,10 +52,11 @@ import { SongProvider,BandProvider,NoteProvider } from '../providers/index';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(FIREBASE_CONFIG),
+    HttpClientModule,
     LoginPageModule,
     HomePageModule,
     UserPageModule,
-    AngularFireModule.initializeApp(FIREBASE_CONFIG),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     RegisterPageModule,
@@ -63,7 +67,8 @@ import { SongProvider,BandProvider,NoteProvider } from '../providers/index';
     RegisterBandPageModule,
     AddBandPageModule,
     AddNotePageModule,
-    EditNotePageModule
+    EditNotePageModule,
+    NoteDetailPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -84,7 +89,8 @@ import { SongProvider,BandProvider,NoteProvider } from '../providers/index';
     // SongsService,
     SongProvider,
     BandProvider,
-    NoteProvider
+    NoteProvider,
+    NewsProvider
   ]
 })
 export class AppModule { }

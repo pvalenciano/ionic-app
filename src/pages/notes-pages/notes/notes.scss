@@ -1,0 +1,33 @@
+page-notes {
+    ion-content{
+        // background-color: aqua !important;
+        background-image: url('../../assets/imgs/background6.svg');
+    
+        // .scroll_content{
+        //     overflow-y: scroll;
+        //     height: 500px;
+        // }
+       
+        .note_header{
+            display:flex;
+            width: 100%;
+
+        }
+        ion-card{
+            background-color: rgba(255, 255, 255, 0.822) !important;
+        }
+         .trash_div{
+            background-color: transparent;
+
+         }
+    
+    }
+   
+    ion-buttons{
+        width: 100%;
+    }
+    .date_label{
+        float: right;
+        margin-right:10px;
+    }
+}

@@ -1,0 +1,22 @@
+page-register-band {
+    ion-content{
+        background-image: url('../../assets/imgs/background13.jpg') ;
+        // .bands_list{
+        //     background-color: rgba(9, 204, 230, 0.096) !important;
+        // }
+
+        .bands_list {
+            color:rgb(255, 255, 255);
+            background-color: rgba(26, 2, 71, 0.342) !important;
+        }
+    }
+  
+    .scroll_list{
+        overflow-y: scroll;
+        height: 80%;
+    }
+    .add_band{
+        position: absolute;
+        bottom: 10px;
+    }
+}

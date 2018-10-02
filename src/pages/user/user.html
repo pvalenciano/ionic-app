@@ -19,17 +19,17 @@
 
 
 <ion-content class="card-background-page">
-  <ion-card [navPush]="pushComponent.pushToMusic">
+  <ion-card (click)="navigate(1)">
     <img class="img_top" src="https://www.filmofilia.com/wp-content/uploads/2009/08/taking_woodstock_onesheet.jpg">
     <div class="card-title">Music</div>
   </ion-card>
 
-  <ion-card [navPush]="pushComponent.pushToNotes">
+  <ion-card  (click)="navigate(2)">
     <img src="https://learnenglishteens.britishcouncil.org/sites/teens/files/rs261_157781379-low.jpg">
     <div class="card-title">Notes</div>
   </ion-card>
 
-  <ion-card [navPush]="pushComponent.pushToNews">
+  <ion-card  (click)="navigate(3)">
     <img src="https://static.vix.com/es/sites/default/files/styles/large/public/n/noticias-del-mundo-periodico-insolito-madre-de-dos-cabezas.png?itok=eRkoIdlH">
     <div class="card-title">News</div>
   </ion-card>

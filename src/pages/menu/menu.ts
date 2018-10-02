@@ -3,7 +3,6 @@ import { NavController, NavParams, Nav } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 
 
-
 /**
  * Generated class for the MenuPage page.
  *
@@ -45,13 +44,10 @@ export class MenuPage {
     });
 
     this.pages = [
-      // { title: 'Home', component: 'Home', openTab: 1, icon: 'home' },
-      
+      { title: 'Home', component: 'User', openTab: 1, icon: 'home' },
       { title: 'Login', component: 'Login', openTab: 2, icon: 'md-log-in' },
       { title: 'Notes', component: 'Notes', openTab: 3, icon: 'ios-bookmarks' },
-      { title: 'Components', component: 'Components', openTab: 4, icon: 'md-bulb' },
       { title: 'Profile', component: 'Profile', openTab: 5, icon: 'person' },
-
 
     ];
 
