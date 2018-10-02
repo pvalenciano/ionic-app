@@ -32,12 +32,14 @@ import {
   AddBandPageModule,
   AddNotePageModule,
   EditNotePageModule,
-  NoteDetailPageModule
+  NoteDetailPageModule,
+  QrPageModule
 } from '../pages/modules';
 // import { SongsService } from '../services/song.service';
 import { SongProvider, BandProvider, NoteProvider } from '../providers/index';
 import { NewsProvider } from '../providers/news/news';
 import { HttpClientModule } from '@angular/common/http';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 @NgModule({
   declarations: [
@@ -68,7 +70,8 @@ import { HttpClientModule } from '@angular/common/http';
     AddBandPageModule,
     AddNotePageModule,
     EditNotePageModule,
-    NoteDetailPageModule
+    NoteDetailPageModule,
+    QrPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -90,7 +93,8 @@ import { HttpClientModule } from '@angular/common/http';
     SongProvider,
     BandProvider,
     NoteProvider,
-    NewsProvider
+    NewsProvider,
+    BarcodeScanner
   ]
 })
 export class AppModule { }

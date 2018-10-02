@@ -11,3 +11,4 @@ export { AddBandPageModule } from './music-pages/add-band/add-band.module';
 export { AddNotePageModule } from './notes-pages/add-note/add-note.module';
 export { EditNotePageModule } from './notes-pages/edit-note/edit-note.module';
 export { NoteDetailPageModule } from './note-detail/note-detail.module';
+export { QrPageModule } from './qr/qr.module';

@@ -44,7 +44,7 @@ export class AddBandPage {
   addBand(band: Band) {
     this.regBand.addBand(band).then(ref => {
       this.addNotification();
-      this.navCtrl.setRoot('Bands', { key: ref.key })
+      this.navCtrl.push('Bands', { key: ref.key })
     });
   }
 

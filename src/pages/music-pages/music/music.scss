@@ -1,39 +1,50 @@
 page-music {
     ion-content{
-        background-color:rgba(88, 87, 87, 0.438) !important;
+        ion-navbar{
+            display: flex;
+            color:pink;
+        }
+        background-color:rgba(34, 33, 33, 0.829) !important;
+        
         .select_band{
             background-color: transparent;
             color:rgb(255, 255, 255);
             width: 90%;
             margin: auto;
         }
-        .song_list{
-            
+        .item-md{
+            background-color: transparent;
         }
         .edit_toggle{
             width: 140px;
             text-decoration: none;
             float: right;
             background-color: transparent;
+            // background-color: red;
             color:rgb(255, 255, 255);
+            border-bottom: transparent !important; 
+        }
+        ion-item{
+            border-bottom: none !important; 
+
         }
         .list_items{
-            border-bottom: 0.55px solid rgb(204, 204, 204);
             background-color: transparent;
             color:rgb(19, 230, 89);
         }
-        .item-ios.item-block .item-inner {
-         border-bottom:  transparent !important;
-         }
+        // .item-ios.item-block .item-inner {
+        //  border-bottom:  transparent !important;
+        //  }
          .scroll_list_song{
              overflow-y: scroll;
              width: 100%;
-             height: 280px;
+             height: 250px;
            
          }
     }
 
 }
+
 .icon_logout{
     font-size: 30px;
 }

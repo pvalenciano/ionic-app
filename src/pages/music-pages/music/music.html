@@ -10,7 +10,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Music</ion-title>
+    <!-- <ion-title>Music</ion-title> -->
 
     <ion-icon class="icon_logout" color="danger" float-right name="log-out" (click)="logout()"></ion-icon>
   </ion-navbar>
@@ -23,7 +23,7 @@
   </ion-searchbar>
 
   <ion-list>
-    <ion-buttons >
+    <ion-buttons>
       <button ion-button color="green_white" clear (click)="showAllSongs()">
         All
       </button>
@@ -37,21 +37,23 @@
         <ion-option *ngFor="let band of bandsList$ | async" detail-push>{{band.name}}</ion-option>
       </ion-select>
     </ion-item>
+
+    <ion-item class="edit_toggle">
+      <ion-label>Edit</ion-label>
+      <ion-toggle color="danger" (ionChange)="onEdit($event)"></ion-toggle>
+    </ion-item>
   </ion-list>
 
 
-  <ion-item class="edit_toggle">
-    <ion-label>Edit</ion-label>
-    <ion-toggle color="danger" (ionChange)="onEdit($event)"></ion-toggle>
-  </ion-item>
+
   <div class="scroll_list_song">
-    <ion-list >
+    <ion-list>
       <ion-list-header>
         SONGS LIST
       </ion-list-header>
 
       <!-- <ion-item-group reorder="true" (ionItemReorder)="$event.applyTo(song)"> -->
-      <ion-item-group > 
+      <ion-item-group>
 
         <ion-item class="list_items" *ngFor="let song of songsList$ | async" detail-push [navPush]="goToView"
           [navParams]="{song:song}">
@@ -61,15 +63,15 @@
     </ion-list>
 
   </div>
-  <ion-fab bottom left >
+  <ion-fab bottom left>
     <button ion-fab color="green_black">
       <ion-icon name="musical-notes"></ion-icon>
     </button>
-    <ion-fab-list side="right" >
+    <ion-fab-list side="right">
       <button ion-fab navPush="AddSongPage" color="danger">
         <ion-icon name="musical-note"></ion-icon>
       </button>
-      <button ion-fab navPush="Bands"  color="group_button">
+      <button ion-fab navPush="Bands" color="group_button">
         <ion-icon name="person"></ion-icon>
       </button>
     </ion-fab-list>

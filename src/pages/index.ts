@@ -14,3 +14,4 @@ export { RegisterBandPage } from './music-pages/register-band/register-band';
 export { AddNotePage } from './notes-pages/add-note/add-note';
 export { EditNotePage } from './notes-pages/edit-note/edit-note';
 export { NoteDetailPage } from './note-detail/note-detail';
+export { QrPage } from './qr/qr';

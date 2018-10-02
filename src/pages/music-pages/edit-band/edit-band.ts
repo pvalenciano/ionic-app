@@ -30,7 +30,7 @@ export class EditBandPage {
 
   editBand(band: Band) {
     this.regBand.editBand(band).then(() => {
-      this.navCtrl.setRoot('Bands');
+      this.navCtrl.push('Bands');
     });
 
   }

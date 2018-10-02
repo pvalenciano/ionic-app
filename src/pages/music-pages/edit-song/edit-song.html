@@ -5,17 +5,14 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
-
-    <ion-title>Editing: {{song?.title}}</ion-title>
+    <ion-title>{{song?.title}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
 <ion-content padding>
-  <button ion-button block clear (click)="saveSong(song)">Save</button>
+  <button ion-button color="danger" round full (click)="saveSong(song)">Save</button>
 
   <ion-item>
     <ion-label>
@@ -29,10 +26,7 @@
     <ion-label>Song Title</ion-label>
     <ion-textarea [(ngModel)]="song.title"></ion-textarea>
   </ion-item>
-  <!-- <ion-item class="lyrics">
-    <ion-label>Lyrics</ion-label>
-    <ion-textarea [(ngModel)]="song.lyrics"></ion-textarea>
-  </ion-item> -->
+
   <ion-item>
     <ion-label floating>
       Lyrics
