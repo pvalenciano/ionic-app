@@ -9,6 +9,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { FIREBASE_CONFIG } from './firebase.credentials';
 import { EmailComposer } from '@ionic-native/email-composer';
+import { HttpClientModule } from '@angular/common/http';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 import { MyApp } from './app.component';
 import {
@@ -33,13 +35,10 @@ import {
   AddNotePageModule,
   EditNotePageModule,
   NoteDetailPageModule,
-  QrPageModule
+  QrPageModule,
+  ContainerPageModule
 } from '../pages/modules';
-// import { SongsService } from '../services/song.service';
-import { SongProvider, BandProvider, NoteProvider } from '../providers/index';
-import { NewsProvider } from '../providers/news/news';
-import { HttpClientModule } from '@angular/common/http';
-import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { SongProvider, BandProvider, NoteProvider,NewsProvider,UserProvider } from '../providers/index';
 
 @NgModule({
   declarations: [
@@ -71,7 +70,8 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     AddNotePageModule,
     EditNotePageModule,
     NoteDetailPageModule,
-    QrPageModule
+    QrPageModule,
+    ContainerPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -94,7 +94,8 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     BandProvider,
     NoteProvider,
     NewsProvider,
-    BarcodeScanner
+    BarcodeScanner,
+    UserProvider
   ]
 })
 export class AppModule { }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { MenuPage } from '../menu/menu';
 /**
  * Generated class for the LoginPage page.
  *
@@ -27,7 +28,7 @@ export class LoginPage {
   }
   login(email, password): void {
     this.angularFireAuth.auth.signInWithEmailAndPassword(email, password).then((res) => {
-      this.navCtrl.setRoot('User', { email })
+      this.navCtrl.setRoot(MenuPage, { email })
     });
   }
  

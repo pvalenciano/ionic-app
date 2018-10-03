@@ -20,7 +20,7 @@
     </div>
     <ion-item>
       <ion-label>Email:</ion-label>
-      <ion-input [(ngModel)]="email"></ion-input>
+      <ion-input [(ngModel)]="profile.email"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Password:</ion-label>
@@ -31,7 +31,7 @@
       <ion-input [(ngModel)]="repeatPassword" type="password"></ion-input>
     </ion-item>
     <div text-center>
-      <button ion-button color="secondary" (click)="register(email, password)">Register!</button>
+      <button ion-button color="secondary" (click)="register(profile.email, password)">Register!</button>
 
     </div>
 

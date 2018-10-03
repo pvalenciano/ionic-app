@@ -15,31 +15,30 @@ import {
   templateUrl: 'user.html',
 })
 export class UserPage {
-  pushComponent = {
-    pushToMusic: "Music",
-    pushToNotes: "Notes",
-    pushToNews: NewsPage
-  }
+  // pushComponent = {
+  //   pushToMusic: "Music",
+  //   pushToNotes: "Notes",
+  //   pushToNews: NewsPage
+  // }
 
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
   ) {
-    // this.pushToMusic = MusicPage
 
   }
-  navigate(option) {
+  // navigate(option) {
 
-    switch (option) {
-      case 1:
-        this.navCtrl.setRoot('Music');
-        break;
-      case 2:
-        this.navCtrl.setRoot('Notes');
-        break;
-      case 3:
-        this.navCtrl.setRoot('News');
-        break;
-    }
-  }
+  //   switch (option) {
+  //     case 1:
+  //       this.navCtrl.setRoot('Music');
+  //       break;
+  //     case 2:
+  //       this.navCtrl.setRoot('Notes');
+  //       break;
+  //     case 3:
+  //       this.navCtrl.setRoot('News');
+  //       break;
+  //   }
+  // }
 }

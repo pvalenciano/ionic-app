@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
+import 'rxjs/add/operator/map'
+import 'rxjs/Rx';
+import {
+  NewsPage
+} from '../index';
 
 /**
  * Generated class for the HomePage page.
@@ -15,6 +20,11 @@ import { AngularFireAuth } from 'angularfire2/auth';
   templateUrl: 'home.html',
 })
 export class HomePage {
+  // pushComponent = {
+  //   pushToMusic: "Music",
+  //   pushToNotes: "Notes",
+  //   pushToNews: NewsPage
+  // }
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public angularFireAuth: AngularFireAuth) {
     console.log("USER STATE: ", this.angularFireAuth.authState);
@@ -23,9 +33,22 @@ export class HomePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad HomePage');
   }
-  logout(): void {
-    this.angularFireAuth.auth.signOut();
 
+  logout(){
+    return this.angularFireAuth.auth.signOut();
   }
+  navigate(option) {
 
+    switch (option) {
+      case 1:
+        this.navCtrl.setRoot('Music');
+        break;
+      case 2:
+        this.navCtrl.setRoot('Notes');
+        break;
+      case 3:
+        this.navCtrl.setRoot('News');
+        break;
+    }
+  }
 }
