@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, NavPush, Menu } from 'ionic-angular';
+import { IonicPage, NavController, NavParams} from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { UserProvider } from '../../providers/user/user';
 import { MenuPage } from '../menu/menu';
-import { HomePage } from '../home/home';
 
 /**
  * Generated class for the ContainerPage page.

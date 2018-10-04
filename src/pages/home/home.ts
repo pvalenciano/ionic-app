@@ -6,6 +6,7 @@ import 'rxjs/Rx';
 import {
   NewsPage
 } from '../index';
+import { UserProvider } from '../../providers/user/user';
 
 /**
  * Generated class for the HomePage page.
@@ -20,14 +21,13 @@ import {
   templateUrl: 'home.html',
 })
 export class HomePage {
-  // pushComponent = {
-  //   pushToMusic: "Music",
-  //   pushToNotes: "Notes",
-  //   pushToNews: NewsPage
-  // }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public angularFireAuth: AngularFireAuth) {
-    console.log("USER STATE: ", this.angularFireAuth.authState);
+
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public angularFireAuth: AngularFireAuth,
+    private usProvider: UserProvider) {
   }
 
   ionViewDidLoad() {
@@ -35,7 +35,7 @@ export class HomePage {
   }
 
   logout(){
-    return this.angularFireAuth.auth.signOut();
+    this.usProvider.signOut();
   }
   navigate(option) {
 

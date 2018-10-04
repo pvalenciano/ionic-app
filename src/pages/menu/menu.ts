@@ -32,20 +32,10 @@ export class MenuPage {
   pages: Array<{ title: string, component: string, openTab?: any, icon: string }>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private angularFireAuth: AngularFireAuth) {
-    // this.angularFireAuth.auth.onAuthStateChanged(function (user) {
-    //   console.log("USER  :", user);
-    //   if (user) {
-    //     this.rootPage = 'Menu';
-    //     // this.navCtrl.setRoot('Home');
-    //   } else {
-    //     this.rootPage = 'Login'
-    //     // this.navCtrl.setRoot('Login');
-    //   }
-    // });
+
 
     this.pages = [
       { title: 'Home', component: 'Home', openTab: 1, icon: 'home' },
-      { title: 'Login', component: 'Login', openTab: 2, icon: 'md-log-in' },
       { title: 'Notes', component: 'Notes', openTab: 3, icon: 'ios-bookmarks' },
       { title: 'Profile', component: 'Profile', openTab: 5, icon: 'person' },
 
@@ -64,12 +54,5 @@ export class MenuPage {
     // this.nav.push(page.component, { openTab: page.openTab })
   }
 
-
-  // openPage(page: PageInface): void {
-
-  // }
-  // isActive(page: PageInface): void {
-
-  // }
 
 }

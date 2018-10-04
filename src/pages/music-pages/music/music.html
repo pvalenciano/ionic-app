@@ -5,18 +5,8 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <!-- <ion-title>Music</ion-title> -->
-
-    <ion-icon class="icon_logout" color="danger" float-right name="log-out" (click)="logout()"></ion-icon>
-  </ion-navbar>
-
+  <top-navbar></top-navbar>
 </ion-header>
-
 
 <ion-content padding>
   <ion-searchbar [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)">

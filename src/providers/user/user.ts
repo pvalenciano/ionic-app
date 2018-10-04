@@ -44,4 +44,7 @@ export class UserProvider {
     return this.angularFireAuth.authState.map(
       auth => auth);
   }
+  public signOut(){
+    return this.angularFireAuth.auth.signOut(); 
+  }
 }

@@ -36,10 +36,12 @@ import {
   EditNotePageModule,
   NoteDetailPageModule,
   QrPageModule,
-  ContainerPageModule
+  ContainerPageModule,
+  
 } from '../pages/modules';
-import { SongProvider, BandProvider, NoteProvider,NewsProvider,UserProvider } from '../providers/index';
 
+import { SongProvider, BandProvider, NoteProvider, NewsProvider, UserProvider } from '../providers/index';
+import { ComponentsModule } from '../components/components.module';
 @NgModule({
   declarations: [
     //dont forget to import here the components!!!
@@ -48,9 +50,10 @@ import { SongProvider, BandProvider, NoteProvider,NewsProvider,UserProvider } fr
     ContactPage,
     TabsPage,
     Pg1Page,
-    MenuPage
+    MenuPage,
   ],
   imports: [
+    ComponentsModule,
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
@@ -71,7 +74,7 @@ import { SongProvider, BandProvider, NoteProvider,NewsProvider,UserProvider } fr
     EditNotePageModule,
     NoteDetailPageModule,
     QrPageModule,
-    ContainerPageModule
+    ContainerPageModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -81,7 +84,7 @@ import { SongProvider, BandProvider, NoteProvider,NewsProvider,UserProvider } fr
     AboutPage,
     ContactPage,
     TabsPage,
-    MenuPage
+    MenuPage,
   ],
   providers: [
     StatusBar,
@@ -89,7 +92,6 @@ import { SongProvider, BandProvider, NoteProvider,NewsProvider,UserProvider } fr
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     AngularFireAuth,
     EmailComposer,
-    // SongsService,
     SongProvider,
     BandProvider,
     NoteProvider,
