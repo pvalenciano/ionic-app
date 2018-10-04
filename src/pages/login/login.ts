@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { MenuPage } from '../menu/menu';
+import { HomePage } from '../home/home';
 /**
  * Generated class for the LoginPage page.
  *
@@ -23,12 +24,9 @@ export class LoginPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
-  backToHome() {
-    this.navCtrl.setRoot('Home');
-  }
+
   login(email, password): void {
     this.angularFireAuth.auth.signInWithEmailAndPassword(email, password).then((res) => {
-      this.navCtrl.setRoot(MenuPage, { email })
     });
   }
  

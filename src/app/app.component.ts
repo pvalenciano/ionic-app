@@ -13,8 +13,8 @@ import { ContainerPage } from '../pages/container/container';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage: any = ContainerPage;
-  // rootPage: any;
+  // rootPage: any = ContainerPage;
+  rootPage: any;
 
   constructor(platform: Platform,
     statusBar: StatusBar,
@@ -22,16 +22,17 @@ export class MyApp {
     private angularFireAuth: AngularFireAuth,
     private userProvider: UserProvider
   ) {
+    this.userProvider.getAuth().subscribe(auth => {
+      if (auth) {
+        console.log("logueado");
+        this.rootPage = ContainerPage;
 
-    // this.userProvider.getAuth().subscribe(auth => {
-    //   if (auth) {
-    //     console.log("logueado");
-    //     this.rootPage = MenuPage;
-    //   } else {
-    //     console.log("no logueado");
-    //     this.rootPage = 'Login';
-    //   }
-    // })
+      } else {
+        console.log("no logueado");
+        this.rootPage = LoginPage;
+
+      }
+    })
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.

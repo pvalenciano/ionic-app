@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Profile } from '../../models/profile.model';
+import { MenuPage } from '../menu/menu';
 
 /**
  * Generated class for the RegisterPage page.
@@ -32,9 +33,12 @@ export class RegisterPage {
     this.angularFireAuth.auth.createUserWithEmailAndPassword(this.profile.email, password).then((res) => {
       this.angularFireAuth.authState.take(1).subscribe(auth => {
         this.afDatabase.list(`profile/${auth.uid}`).push(this.profile)
-          .then(() => this.navCtrl.push('Home'))
+          // .then(() => this.navCtrl.push('Home'))
+          .then(() => this.navCtrl.setRoot('Login'))
+
       })
-      this.navCtrl.setRoot('Login', { email });
+      
+      // this.navCtrl.setRoot('Login', { email });
     });
 
 

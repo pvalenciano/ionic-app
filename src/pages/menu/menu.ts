@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { NavController, NavParams, Nav } from 'ionic-angular';
+import {IonicPage, NavController, NavParams, Nav } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { HomePage } from '../home/home';
 
@@ -52,6 +52,9 @@ export class MenuPage {
     ];
 
 
+  }
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad MENU');
   }
   ngOnInit() {
     // this.nav.push(this.rootPage)
