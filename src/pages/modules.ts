@@ -13,3 +13,5 @@ export { EditNotePageModule } from './notes-pages/edit-note/edit-note.module';
 export { NoteDetailPageModule } from './notes-pages/note-detail/note-detail.module';
 export { QrPageModule } from './qr/qr.module';
 export { ContainerPageModule } from './container/container.module';
+export { ProfilePageModule } from './profile/profile.module';
+export { AddSongPageModule} from './music-pages/add-song/add-song.module';

@@ -23,6 +23,7 @@ export class MyApp {
     private userProvider: UserProvider
   ) {
     this.userProvider.getAuth().subscribe(auth => {
+      console.log('auth: ', auth);
       if (auth) {
         console.log("logueado");
         this.rootPage = ContainerPage;

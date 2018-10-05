@@ -58,10 +58,10 @@
       <ion-icon name="musical-notes"></ion-icon>
     </button>
     <ion-fab-list side="right">
-      <button ion-fab navPush="AddSongPage" color="danger">
+      <button ion-fab (click)="pushTo(1)" color="danger">
         <ion-icon name="musical-note"></ion-icon>
       </button>
-      <button ion-fab navPush="Bands" color="group_button">
+      <button ion-fab (click)="pushTo(2)" color="group_button">
         <ion-icon name="person"></ion-icon>
       </button>
     </ion-fab-list>

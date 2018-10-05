@@ -14,7 +14,7 @@ import { AngularFireModule } from 'angularfire2';
  * Ionic pages and navigation.
  */
 
-@IonicPage({ name: 'Profile' })
+// @IonicPage({ name: 'Profile' })
 @Component({
   selector: 'page-profile',
   templateUrl: 'profile.html',
@@ -23,6 +23,9 @@ export class ProfilePage {
   profile = {} as Profile;
   // userDataList$: Observable<Profile[]>;
   userDataList$: any;
+  public currentUser = this.angularFireAuth.auth.currentUser;
+
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -31,7 +34,7 @@ export class ProfilePage {
     private userProvider: UserProvider) {
 
   }
-  // private database = this.angularFireAuth.database();
+
 
   ionViewWillLoad() {
     // console.log('ionViewDidLoad ProfilePage');  
@@ -39,7 +42,7 @@ export class ProfilePage {
     //   var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
     // })
 
-    console.log("currentUser: ",this.angularFireAuth.auth.currentUser);
+    console.log("currentUser: ", this.currentUser);
   }
   createProfile() {
     this.angularFireAuth.authState.take(1).subscribe(auth => {

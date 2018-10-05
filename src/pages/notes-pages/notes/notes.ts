@@ -12,7 +12,7 @@ import { AlertController } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage({ name: 'Notes' })
+// @IonicPage({ name: 'Notes' })
 @Component({
   selector: 'page-notes',
   templateUrl: 'notes.html',

@@ -34,7 +34,7 @@ export class RegisterPage {
       this.angularFireAuth.authState.take(1).subscribe(auth => {
         this.afDatabase.list(`profile/${auth.uid}`).push(this.profile)
           // .then(() => this.navCtrl.push('Home'))
-          .then(() => this.navCtrl.setRoot('Login'))
+          // .then(() => this.navCtrl.setRoot('Login'))
 
       })
       

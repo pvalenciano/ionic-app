@@ -27,6 +27,7 @@ export class LoginPage {
 
   login(email, password): void {
     this.angularFireAuth.auth.signInWithEmailAndPassword(email, password).then((res) => {
+      console.log("making login....");
     });
   }
  

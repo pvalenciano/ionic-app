@@ -1,7 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
-import {IonicPage, NavController, NavParams, Nav } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Nav } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { HomePage } from '../home/home';
+import { UserProvider } from '../../providers';
+import { LoginPage } from '../login/login';
+import { NotesPage } from '../notes-pages/notes/notes';
+import { ProfilePage } from '../profile/profile';
 
 
 /**
@@ -25,21 +29,37 @@ import { HomePage } from '../home/home';
 })
 
 export class MenuPage {
-  public rootPage: string = 'Home';
+  public rootPage;
   // public rootPage: string;
 
   @ViewChild(Nav) nav: Nav;
-  pages: Array<{ title: string, component: string, openTab?: any, icon: string }>;
+  // pages: Array<{ title: string, component: string, openTab?: any, icon: string }>;
+  pages:any;
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    private angularFireAuth: AngularFireAuth,
+    private userProvider: UserProvider) {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private angularFireAuth: AngularFireAuth) {
+    this.userProvider.getAuth().subscribe(auth => {
+      if (auth) {
+         this.rootPage = HomePage;
 
+        this.pages = [
+          { title: 'Home', component: HomePage, openTab: 1, icon: 'home' },
+          { title: 'Notes', component: NotesPage , openTab: 3, icon: 'ios-bookmarks' },
+          { title: 'Profile', component: ProfilePage, openTab: 5, icon: 'person' },
 
-    this.pages = [
-      { title: 'Home', component: 'Home', openTab: 1, icon: 'home' },
-      { title: 'Notes', component: 'Notes', openTab: 3, icon: 'ios-bookmarks' },
-      { title: 'Profile', component: 'Profile', openTab: 5, icon: 'person' },
+          // { title: 'Home', component: 'Home', openTab: 1, icon: 'home' },
+          // { title: 'Notes', component: 'Notes', openTab: 3, icon: 'ios-bookmarks' },
+          // { title: 'Profile', component: 'Profile', openTab: 5, icon: 'person' },
 
-    ];
+        ];
+      } else {
+        console.log("no logueado");
+
+      }
+    })
+
 
 
   }

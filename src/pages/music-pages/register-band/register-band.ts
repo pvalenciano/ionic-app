@@ -4,6 +4,8 @@ import { BandProvider } from '../../../providers/band/band';
 import { Band } from '../../../models/band.model';
 import { Observable } from 'rxjs/Observable';
 import { AlertController } from 'ionic-angular';
+import { EditBandPage } from '../edit-band/edit-band';
+import { AddBandPage } from '../add-band/add-band';
 
 /**
  * Generated class for the RegisterBandPage page.
@@ -61,6 +63,8 @@ export class RegisterBandPage {
     });
     confirm.present();
   }
-
+  pushTo(){
+    this.navCtrl.push(AddBandPage);
+  }
 
 }

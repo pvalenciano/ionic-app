@@ -7,6 +7,8 @@ import {
   NewsPage
 } from '../index';
 import { UserProvider } from '../../providers/user/user';
+import { MusicPage } from '../music-pages/music/music';
+import { NotesPage } from '../notes-pages/notes/notes';
 
 /**
  * Generated class for the HomePage page.
@@ -15,13 +17,12 @@ import { UserProvider } from '../../providers/user/user';
  * Ionic pages and navigation.
  */
 
-@IonicPage({ name: 'Home' })
+// @IonicPage({ name: 'Home' })
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',
 })
 export class HomePage {
-
 
   constructor(
     public navCtrl: NavController, 
@@ -34,20 +35,18 @@ export class HomePage {
     console.log('ionViewDidLoad HomePage');
   }
 
-  logout(){
-    this.usProvider.signOut();
-  }
+
   navigate(option) {
 
     switch (option) {
       case 1:
-        this.navCtrl.setRoot('Music');
+        this.navCtrl.setRoot(MusicPage);
         break;
       case 2:
-        this.navCtrl.setRoot('Notes');
+        this.navCtrl.setRoot(NotesPage);
         break;
       case 3:
-        this.navCtrl.setRoot('News');
+        this.navCtrl.setRoot(NewsPage);
         break;
     }
   }

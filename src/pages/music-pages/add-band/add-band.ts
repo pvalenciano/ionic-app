@@ -11,7 +11,7 @@ import { ToastController } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+// @IonicPage()
 @Component({
   selector: 'page-add-band',
   templateUrl: 'add-band.html',
@@ -44,7 +44,7 @@ export class AddBandPage {
   addBand(band: Band) {
     this.regBand.addBand(band).then(ref => {
       this.addNotification();
-      this.navCtrl.push('Bands', { key: ref.key })
+      this.navCtrl.pop()
     });
   }
 

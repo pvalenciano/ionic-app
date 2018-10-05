@@ -12,7 +12,7 @@ import { BandProvider } from '../../../providers/band/band';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+// @IonicPage()
 @Component({
   selector: 'page-add-song',
   templateUrl: 'add-song.html',

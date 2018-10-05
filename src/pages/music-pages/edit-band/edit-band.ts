@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Band } from '../../../models/band.model';
 import { BandProvider } from '../../../providers/band/band';
+import { RegisterBandPage } from '../register-band/register-band';
 
 
 /**
@@ -30,7 +31,7 @@ export class EditBandPage {
 
   editBand(band: Band) {
     this.regBand.editBand(band).then(() => {
-      this.navCtrl.push('Bands');
+      this.navCtrl.pop();
     });
 
   }

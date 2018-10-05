@@ -9,6 +9,8 @@ import { AlertController } from 'ionic-angular';
 import { EmailComposer } from '@ionic-native/email-composer';
 import { SongProvider } from '../../../providers/song/song';
 import { BandProvider } from '../../../providers/band/band';
+import { RegisterBandPage } from '../register-band/register-band';
+import { AddSongPage } from '../add-song/add-song';
 /**
  * Generated class for the MusicPage page.
  *
@@ -16,7 +18,7 @@ import { BandProvider } from '../../../providers/band/band';
  * Ionic pages and navigation.
  */
 
-@IonicPage({ name: 'Music' })
+// @IonicPage({ name: 'Music' })
 @Component({
   selector: 'page-music',
   templateUrl: 'music.html',
@@ -39,7 +41,7 @@ export class MusicPage {
     private emailComposer: EmailComposer,
     public songsProvider: SongProvider,
     public bandProvider: BandProvider
-    ) {
+  ) {
 
     this.songsList$ = this.songsProvider.getSongsList().snapshotChanges().map(changes => {
       return changes.map(c => ({
@@ -117,6 +119,24 @@ export class MusicPage {
     };
     this.emailComposer.open(email);
     console.log("email? : ", this.emailComposer.open(email));
+  }
+  pushTo(option) {
+    switch (option) {
+      case 1:
+        this.navCtrl.push(AddSongPage)
+
+        break;
+      case 2:
+        this.navCtrl.push(RegisterBandPage)
+
+        break;
+      case 3:
+
+        break;
+
+
+    }
+
   }
   //Searchbar methods
   onInput(e) {

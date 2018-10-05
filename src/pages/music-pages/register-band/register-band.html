@@ -18,7 +18,9 @@
         </ion-item>
 
 
-        <ion-item-options side="right" >
+        <ion-item-options side="right">
+          <!-- <button ion-button color="primary" (click)="pushTo()"> -->
+
           <button ion-button color="primary" navPush="EditBandPage" [navParams]="{band:band}">
             <ion-icon name="paper"></ion-icon>
           </button>
@@ -34,7 +36,7 @@
   </div>
 
 
-  <button ion-fab class="add_band" color="purple" navPush="AddBandPage">
+  <button ion-fab class="add_band" color="purple" (click)="pushTo()">
     <ion-icon name="add"></ion-icon>
   </button>
 

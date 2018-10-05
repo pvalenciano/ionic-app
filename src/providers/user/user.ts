@@ -11,7 +11,6 @@ export class UserProvider {
 
   userList: AngularFireList<any>;
 
-
   // private userDataRef = this.angularFireAuth.authState.take(1).subscribe(auth => {
   //   this.db.list<Profile>(`profile/${auth.uid}`)
   // });
@@ -28,23 +27,26 @@ export class UserProvider {
   //   lastSign: this.currentUser.metadata.lastSignInTime
   // }
 
-  constructor(public http: HttpClient, 
-    private db: AngularFireDatabase, 
+  constructor(public http: HttpClient,
+    private db: AngularFireDatabase,
     public angularFireAuth: AngularFireAuth) {
   }
 
   getUserData() {
-      this.userList = this.db.list<Profile>('profile');
-      return this.userList;
+    this.userList = this.db.list<Profile>('profile');
+    return this.userList;
   }
   editUserData() {
 
   }
   public getAuth() {
     return this.angularFireAuth.authState.map(
-      auth => auth);
+      auth => auth );
   }
-  public signOut(){
-    return this.angularFireAuth.auth.signOut(); 
+ 
+  public signOut() {
+
+    return this.angularFireAuth.auth.signOut();
   }
+
 }

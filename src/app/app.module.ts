@@ -37,7 +37,8 @@ import {
   NoteDetailPageModule,
   QrPageModule,
   ContainerPageModule,
-  
+  ProfilePageModule,
+  AddSongPageModule
 } from '../pages/modules';
 
 import { SongProvider, BandProvider, NoteProvider, NewsProvider, UserProvider } from '../providers/index';
@@ -75,6 +76,8 @@ import { ComponentsModule } from '../components/components.module';
     NoteDetailPageModule,
     QrPageModule,
     ContainerPageModule,
+    ProfilePageModule,
+    AddSongPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
